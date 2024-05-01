@@ -4,6 +4,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom"
 import { AdminChange } from "../../navigation/navigation";
+import { baseUrl } from "../../App";
 
 const AdminLogin=()=>{
 
@@ -16,7 +17,7 @@ const AdminLogin=()=>{
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/admin/login", {
+      const response = await axios.post(`${baseUrl}/admin/login`, {
         email: email,
         password: password
       });

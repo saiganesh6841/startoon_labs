@@ -13,6 +13,10 @@ app.use(cors())
 
 const router=require('./routes/route')
 app.use(router)
+
+app.get("/",(req,res)=>{
+  res.json("app is successfully running")
+})
 // Retrieve the port from environment variables
 const port = process.env.PORT;
 console.log(process.env.PORT);
